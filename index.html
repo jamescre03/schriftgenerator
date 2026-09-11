@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dein Schriftgenerator | Schöne Kostenlose Schriftarten</title>
+<meta name="description" content="Mit unserem Schriftgenerator online kannst du schnell schöne, verrückte und coole Schriftarten erstellen. Das Richtige um Profile & Nicks toll aufzupeppen">
+<link rel="canonical" href="https://schriftartgenerator.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://schriftartgenerator.com/">
+<meta property="og:title" content="Dein Schriftgenerator | Schöne Kostenlose Schriftarten">
+<meta property="og:description" content="Mit unserem Schriftgenerator online kannst du schnell schöne, verrückte und coole Schriftarten erstellen. Das Richtige um Profile & Nicks toll aufzupeppen">
+<meta property="og:image" content="https://schriftartgenerator.com/og-image.jpg">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Schriftgenerator">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dein Schriftgenerator | Schöne Kostenlose Schriftarten">
+<meta name="twitter:description" content="Mit unserem Schriftgenerator online kannst du schnell schöne, verrückte und coole Schriftarten erstellen. Das Richtige um Profile & Nicks toll aufzupeppen">
+<meta name="twitter:image" content="https://schriftartgenerator.com/og-image.jpg">
+
+<!-- Basic crawl signals -->
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="German">
+<style>
+  :root{
+    --paper: #FAF9F5;
+    --paper-raised: #F2F0E9;
+    --ink: #1B1A17;
+    --ink-muted: #6B675E;
+    --hair: #DEDBD1;
+    --accent: #A8331F;
+    --accent-ink: #FAF3EF;
+    --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --maxw: 1100px;
+    --textw: 700px;
+  }
+
+  @font-face{
+    font-family:'Fraunces';
+    src: local('Fraunces');
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--accent);}
+
+  img{max-width:100%;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .prose{
+    max-width:var(--textw);
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(250,249,245,0.92);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:1px solid var(--hair);
+  }
+  .headbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 28px;
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .brand{
+    font-family:var(--serif);
+    font-size:1.35rem;
+    font-weight:600;
+    letter-spacing:0.2px;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  nav.mainnav{
+    display:flex;
+    gap:28px;
+  }
+  nav.mainnav a{
+    color:var(--ink-muted);
+    text-decoration:none;
+    font-size:0.94rem;
+  }
+  nav.mainnav a:hover{color:var(--accent);}
+
+  .navtoggle{
+    display:none;
+    background:none;
+    border:1px solid var(--hair);
+    border-radius:6px;
+    padding:8px 10px;
+    font-size:1rem;
+    color:var(--ink);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:76px 0 56px;
+    border-bottom:1px solid var(--hair);
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(2.1rem, 4.4vw, 3.35rem);
+    line-height:1.12;
+    margin:0 0 26px;
+    max-width:880px;
+    letter-spacing:-0.01em;
+  }
+  .hero p{
+    max-width:var(--textw);
+    color:var(--ink);
+    font-size:1.08rem;
+  }
+
+  /* ---------- section shell ---------- */
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--hair);
+  }
+  section:last-of-type{border-bottom:none;}
+  section h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(1.5rem, 2.6vw, 2rem);
+    margin:0 0 28px;
+    max-width:var(--textw);
+  }
+  section p{
+    max-width:var(--textw);
+    margin:0 0 18px;
+  }
+
+  /* ---------- generator tool ---------- */
+  .tool-section{background:var(--paper-raised);}
+  .tool-panel{
+    max-width:var(--maxw);
+  }
+  .tool-input-row{
+    display:flex;
+    gap:12px;
+    max-width:640px;
+    margin-bottom:34px;
+  }
+  #textInput{
+    flex:1;
+    font-family:var(--sans);
+    font-size:1.05rem;
+    padding:14px 16px;
+    border:1.5px solid var(--hair);
+    border-radius:8px;
+    background:var(--paper);
+    color:var(--ink);
+    outline:none;
+  }
+  #textInput:focus{border-color:var(--accent);}
+  #textInput::placeholder{color:var(--ink-muted);}
+
+  .results{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    border:1px solid var(--hair);
+    border-radius:10px;
+    overflow:hidden;
+    background:var(--paper);
+  }
+  .result-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:18px 20px;
+    border-bottom:1px solid var(--hair);
+  }
+  .result-row:last-child{border-bottom:none;}
+  .result-main{
+    min-width:0;
+  }
+  .result-label{
+    font-size:0.78rem;
+    color:var(--ink-muted);
+    text-transform:none;
+    margin-bottom:6px;
+  }
+  .result-text{
+    font-size:1.28rem;
+    word-break:break-word;
+    line-height:1.4;
+  }
+  .copy-btn{
+    flex:0 0 auto;
+    background:var(--ink);
+    color:var(--paper);
+    border:none;
+    padding:10px 16px;
+    border-radius:7px;
+    font-size:0.88rem;
+    cursor:pointer;
+    font-family:var(--sans);
+    transition:background 120ms ease;
+  }
+  .copy-btn:hover{background:var(--accent);}
+  .copy-btn.copied{background:var(--accent);}
+
+  /* ---------- steps (wie funktioniert) ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+    max-width:var(--maxw);
+  }
+  .step{
+    border-top:1px solid var(--hair);
+    padding-top:18px;
+  }
+  .step .num{
+    font-family:var(--serif);
+    font-size:1.6rem;
+    color:var(--accent);
+    display:block;
+    margin-bottom:10px;
+  }
+  .step h3{
+    font-size:1.08rem;
+    margin:0 0 8px;
+    font-weight:600;
+  }
+  .step p{
+    font-size:0.97rem;
+    color:var(--ink-muted);
+    margin:0;
+    max-width:none;
+  }
+
+  /* ---------- category grid ---------- */
+  .cat-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0;
+    max-width:var(--maxw);
+    border-top:1px solid var(--hair);
+    border-left:1px solid var(--hair);
+  }
+  .cat-item{
+    border-right:1px solid var(--hair);
+    border-bottom:1px solid var(--hair);
+    padding:22px 24px;
+    font-size:1rem;
+  }
+
+  /* ---------- use case list ---------- */
+  .use-list{
+    max-width:var(--maxw);
+    display:flex;
+    flex-direction:column;
+  }
+  .use-item{
+    padding:26px 0;
+    border-top:1px solid var(--hair);
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:24px;
+  }
+  .use-item:last-child{border-bottom:1px solid var(--hair);}
+  .use-item h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.15rem;
+    margin:0;
+  }
+  .use-item p{
+    margin:0;
+    max-width:var(--textw);
+  }
+
+  /* ---------- faq ---------- */
+  .faq-list{max-width:var(--textw);}
+  .faq-item{
+    border-top:1px solid var(--hair);
+  }
+  .faq-item:last-child{border-bottom:1px solid var(--hair);}
+  .faq-q{
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:20px 0;
+    font-family:var(--sans);
+    font-size:1.03rem;
+    font-weight:600;
+    color:var(--ink);
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .faq-q .icon{
+    flex:0 0 auto;
+    font-family:var(--serif);
+    font-size:1.3rem;
+    color:var(--accent);
+    transition:transform 160ms ease;
+  }
+  .faq-item.open .faq-q .icon{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 220ms ease;
+  }
+  .faq-a p{
+    margin:0 0 20px;
+    color:var(--ink-muted);
+  }
+  .faq-item.open .faq-a{max-height:220px;}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:40px 0 50px;
+  }
+  .foot-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
+    max-width:var(--maxw);
+  }
+  .foot-brand{
+    font-family:var(--serif);
+    font-size:1.1rem;
+  }
+  .foot-nav{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .foot-nav a{
+    color:var(--ink-muted);
+    text-decoration:none;
+    font-size:0.9rem;
+  }
+  .foot-nav a:hover{color:var(--accent);}
+  .foot-note{
+    color:var(--ink-muted);
+    font-size:0.85rem;
+    margin-top:20px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 820px){
+    .steps{grid-template-columns:1fr;}
+    .cat-grid{grid-template-columns:1fr;}
+    .use-item{grid-template-columns:1fr;gap:8px;}
+  }
+
+  @media (max-width: 640px){
+    .headbar{padding:14px 20px;}
+    nav.mainnav{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--paper);
+      border-bottom:1px solid var(--hair);
+      flex-direction:column;
+      gap:0;
+      display:none;
+      padding:6px 20px 14px;
+    }
+    nav.mainnav.show{display:flex;}
+    nav.mainnav a{padding:10px 0;border-top:1px solid var(--hair);}
+    .navtoggle{display:block;}
+    .hero{padding:48px 0 40px;}
+    section{padding:44px 0;}
+    .tool-input-row{flex-direction:column;}
+    .result-row{flex-direction:column;align-items:flex-start;gap:12px;}
+    .copy-btn{align-self:flex-start;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+
+  :focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:2px;
+  }
+  .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.brand-logo{
+  height:32px;
+  width:auto;
+  display:block;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+   <a href="#top" class="brand">
+  <img src="/logo.png" alt="Schriftgenerator Logo" class="brand-logo">
+  Schriftgenerator
+</a>
+    <button class="navtoggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <nav class="mainnav" id="mainNav">
+      <a href="#tool">Tool</a>
+      <a href="#funktion">So funktioniert's</a>
+      <a href="#schriftarten">Schriftarten</a>
+      <a href="#einsatz">Einsatz</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-bottom:1px solid var(--hair);">
+    <div class="wrap">
+      <h1>Schriftgenerator: Coole Schriftarten kostenlos erstellen und kopieren</h1>
+      <p>Mit einem <a href="https://schriftartgenerator.com/">Schriftgenerator</a> verwandelst du ganz normalen Text im Handumdrehen in auffällige, stylische Schriftarten – ganz ohne Download, Anmeldung oder Design-Kenntnisse. Ob verschnörkelte Handschrift, fette Buchstaben, Gothic-Look oder verdrehte Zeichen: Du tippst deinen Text einmal ein und bekommst sofort dutzende Varianten zur Auswahl, die du direkt kopieren und überall einfügen kannst. Genau deshalb ist ein Schriftgenerator mittlerweile aus Social Media, Gaming und Chat-Apps kaum noch wegzudenken.</p>
+    </div>
+  </section>
+
+  <!-- TOOL -->
+  <section class="tool-section" id="tool">
+    <div class="wrap tool-panel">
+      <h2>Dein Text, sofort in jedem Stil</h2>
+      <div class="tool-input-row">
+        <input type="text" id="textInput" placeholder="Text eingeben …" autocomplete="off">
+      </div>
+      <div class="results" id="results"></div>
+    </div>
+  </section>
+
+  <!-- WIE FUNKTIONIERT -->
+  <section id="funktion">
+    <div class="wrap">
+      <h2>Wie funktioniert ein Schriftgenerator?</h2>
+      <p>Die Bedienung ist bewusst simpel gehalten, damit jeder – ganz ohne technisches Vorwissen – in Sekunden zum Ergebnis kommt:</p>
+      <div class="steps">
+        <div class="step">
+          <span class="num">1</span>
+          <h3>Text eingeben</h3>
+          <p>Tippe dein Wort, deinen Namen oder deinen Satz einfach in das Eingabefeld des Schriftgenerators ein.</p>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <h3>Schriftstil auswählen</h3>
+          <p>Der Generator zeigt dir sofort eine Liste verschiedener Textstile an – von dezent bis extravagant. Scrolle durch die Vorschau und wähle die Schriftart aus, die am besten zu deiner Stimmung oder deinem Projekt passt.</p>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <h3>Kopieren und einfügen</h3>
+          <p>Klicke auf das Kopier-Symbol neben deinem Favoriten und füge den Text an beliebiger Stelle ein – egal ob in Instagram, WhatsApp, Discord oder einem Dokument. Fertig.</p>
+        </div>
+      </div>
+      <p style="margin-top:34px;">Das gesamte Angebot ist kostenlos, unbegrenzt nutzbar und erfordert keine Registrierung.</p>
+    </div>
+  </section>
+
+  <!-- TECHNIK DAHINTER -->
+  <section>
+    <div class="wrap prose">
+      <h2>Die Technik dahinter: Warum es eigentlich keine „echten“ Schriftarten sind</h2>
+      <p>Ein kleines, aber wichtiges Detail vorab: Ein Schriftgenerator erzeugt streng genommen keine neuen Schriftarten im klassischen Sinn. Stattdessen greift er auf Unicode zurück – einen internationalen Zeichenstandard, der weltweit über 140.000 verschiedene Zeichen umfasst und dafür sorgt, dass Text auf jedem Gerät gleich dargestellt wird.</p>
+      <p>Innerhalb dieses riesigen Zeichensatzes gibt es zahlreiche Symbole, die optisch wie Buchstaben aussehen, aber technisch eigene Unicode-Zeichen sind. Aus einem normalen „A" wird so beispielsweise ein fett gedrucktes mathematisches Symbol oder eine kursive Variante – je nachdem, welchen Bereich der Unicode-Tabelle der Schriftgenerator dafür nutzt. Der Generator sucht also für jeden eingegebenen Buchstaben das passende „schickere" Gegenstück heraus und setzt daraus deinen Text zusammen.</p>
+      <p>Der große Vorteil: Weil es sich um echten Unicode-Text handelt und nicht um ein Bild oder eine CSS-Formatierung, lässt sich das Ergebnis wie normaler Text kopieren, verschicken und einfügen – in E-Mails, Nutzernamen, Bios oder Chatverläufen. Genau deshalb funktioniert ein Font Generator auf praktisch jedem Smartphone, Browser und Betriebssystem gleichermaßen zuverlässig.</p>
+    </div>
+  </section>
+
+  <!-- SCHRIFTARTEN -->
+  <section id="schriftarten">
+    <div class="wrap">
+      <h2>Welche Schriftarten stehen zur Auswahl?</h2>
+      <p>Ein guter Schriftgenerator bietet eine breite Vielfalt an Stilen, damit für jeden Anlass etwas dabei ist. Zu den beliebtesten Kategorien zählen unter anderem:</p>
+      <div class="cat-grid">
+        <div class="cat-item">Fette Schrift – für maximale Aufmerksamkeit in Überschriften oder Bios</div>
+        <div class="cat-item">Kursive und geschwungene Handschrift – wirkt elegant und persönlich</div>
+        <div class="cat-item">Gothic- und altdeutsche Schrift – für einen markanten, außergewöhnlichen Look</div>
+        <div class="cat-item">Spiegelschrift und Überkopf-Schrift – perfekt für witzige WhatsApp-Nachrichten</div>
+        <div class="cat-item">Bubble- und Kreisschrift – verspielt und rund</div>
+        <div class="cat-item">Miniaturschrift – extrem klein und dezent</div>
+        <div class="cat-item">Glitch- und verrückte Schriftarten – chaotisch, auffällig, ideal für Gaming-Namen</div>
+        <div class="cat-item">Symbol- und Fantasieschrift – ungewöhnliche Zeichen für einen einzigartigen Auftritt</div>
+      </div>
+      <p style="margin-top:28px;">Da jede dieser Varianten auf Unicode basiert, lässt sich jede Schriftart genauso einfach kopieren und einfügen wie normaler Text.</p>
+    </div>
+  </section>
+
+  <!-- EINSATZ -->
+  <section id="einsatz">
+    <div class="wrap">
+      <h2>Wo lässt sich der Schriftgenerator sinnvoll einsetzen?</h2>
+      <p><a href="https://schriftartgenerator.com/">Ein Schriftgenerator</a> eignet sich für deutlich mehr als nur verspielte Spielereien zwischendurch:</p>
+      <div class="use-list">
+        <div class="use-item">
+          <h3>Social Media</h3>
+          <p>Ob Instagram-Bio, Facebook-Post, TikTok-Untertitel oder Twitter-Profil – mit stylischer Schrift hebst du dich sofort vom Einheitsbrei ab und sorgt für mehr Aufmerksamkeit bei deinen Followern.</p>
+        </div>
+        <div class="use-item">
+          <h3>Gaming und Chat-Plattformen</h3>
+          <p>Auf Discord, Steam, Agar.io oder in anderen Online-Games verleiht ein außergewöhnlicher Nickname deinem Profil sofort Wiedererkennungswert.</p>
+        </div>
+        <div class="use-item">
+          <h3>WhatsApp und Messenger</h3>
+          <p>Da WhatsApp selbst kaum Formatierungsoptionen bietet, lässt sich über einen Schriftgenerator zumindest fette, kursive oder verdrehte Schrift erzeugen und direkt in den Chat einfügen.</p>
+        </div>
+        <div class="use-item">
+          <h3>Marketing und Werbung</h3>
+          <p>Auffällige Headlines und Taglines lassen sich mit einer besonderen Schriftart optisch hervorheben – besonders wirkungsvoll, wenn sie sparsam und gezielt mit gut lesbaren Standardschriften kombiniert werden.</p>
+        </div>
+        <div class="use-item">
+          <h3>DIY und Grußkarten</h3>
+          <p>Wer gerne selbst gestaltet, findet im Schriftgenerator eine schnelle Möglichkeit, individuelle Texte für Karten, Sticker oder Einladungen zu erstellen.</p>
+        </div>
+        <div class="use-item">
+          <h3>Dokumente und Notizen</h3>
+          <p>Auch für Überschriften in Lernunterlagen oder persönlichen Notizen lässt sich eine besondere Schriftart nutzen, um wichtige Stellen optisch abzuheben.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASSENDE SCHRIFTART -->
+  <section>
+    <div class="wrap prose">
+      <h2>Die passende Schriftart auswählen</h2>
+      <p>Bei der riesigen Auswahl lohnt es sich, kurz zu überlegen, welche Stimmung der Text vermitteln soll. Eine verspielte, geschwungene Schrift passt gut zu privaten Nachrichten oder kreativen Social-Media-Posts, während eine dezente, kompakte Variante besser für Notizen oder längere Texte geeignet ist, bei denen Lesbarkeit im Vordergrund steht.</p>
+      <p>Für formelle Anlässe – etwa geschäftliche Präsentationen oder offizielle Dokumente – empfiehlt es sich, auf stark verschnörkelte oder extravagante Schriftarten zu verzichten und stattdessen dezente Varianten zu wählen oder ganz auf normale Schrift zu setzen.</p>
+    </div>
+  </section>
+
+  <!-- DARSTELLUNG -->
+  <section>
+    <div class="wrap prose">
+      <h2>Wann wird die Schrift nicht korrekt angezeigt?</h2>
+      <p>In seltenen Fällen kann es vorkommen, dass eine generierte Schriftart nicht richtig dargestellt wird und stattdessen ein leeres Kästchen erscheint. Das liegt nicht an einem Fehler des Schriftgenerators, sondern daran, dass die jeweilige Website oder App das entsprechende Unicode-Zeichen nicht unterstützt. Die meisten modernen Plattformen, Browser und Betriebssysteme kommen jedoch problemlos mit den generierten Zeichen zurecht.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2>Häufig gestellte Fragen zum Schriftgenerator</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q"><span>Ist der Schriftgenerator kostenlos?</span><span class="icon">+</span></button>
+          <div class="faq-a"><p>Ja, die Nutzung ist vollständig kostenlos, ohne Anmeldung, Zeichenlimit oder versteckte Kosten.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Funktioniert der Schriftgenerator auch auf dem Smartphone?</span><span class="icon">+</span></button>
+          <div class="faq-a"><p>Ja. Sowohl auf iPhone als auch auf Android-Geräten lässt sich Text eingeben, ein Stil antippen und über die Zwischenablage in jede beliebige App einfügen.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Kann ich damit meine Schrift direkt bei Instagram oder TikTok ändern?</span><span class="icon">+</span></button>
+          <div class="faq-a"><p>Die Plattformen selbst bieten keine Möglichkeit, die Schriftart direkt in der App zu ändern. Über den Schriftgenerator erstellst du den gewünschten Stil jedoch separat und fügst ihn anschließend einfach in Bio, Beitrag oder Nutzernamen ein.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Sind die generierten Schriftarten sicher für Nutzernamen?</span><span class="icon">+</span></button>
+          <div class="faq-a"><p>Ja. Da es sich um reguläre Unicode-Zeichen handelt, lassen sie sich problemlos für Nutzernamen, Gaming-Tags oder Profile verwenden.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Warum sehe ich manchmal nur ein Kästchen statt der Schrift?</span><span class="icon">+</span></button>
+          <div class="faq-a"><p>Das bedeutet, dass die jeweilige Website das entsprechende Unicode-Zeichen nicht unterstützt – ein technisches Darstellungsproblem der Plattform, kein Fehler des Generators selbst.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span class="foot-brand">Schriftgenerator</span>
+      <nav class="foot-nav">
+        <a href="#tool">Tool</a>
+        <a href="#funktion">So funktioniert's</a>
+        <a href="#schriftarten">Schriftarten</a>
+        <a href="#einsatz">Einsatz</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+    <p class="foot-note">Kostenlos, unbegrenzt und ohne Anmeldung nutzbar.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---------- mobile nav ----------
+  var toggle = document.getElementById('navToggle');
+  var nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('show'); });
+  });
+
+  // ---------- faq accordion ----------
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    q.addEventListener('click', function(){
+      item.classList.toggle('open');
+    });
+  });
+
+  // ---------- unicode style maps ----------
+  var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lower = "abcdefghijklmnopqrstuvwxyz";
+  var digits = "0123456789";
+
+  function buildContinuous(startUpper, startLower, startDigit){
+    var map = {};
+    for (var i=0;i<26;i++){
+      map[upper[i]] = String.fromCodePoint(startUpper + i);
+      map[lower[i]] = String.fromCodePoint(startLower + i);
+    }
+    if (startDigit !== null){
+      for (var d=0; d<10; d++){
+        map[digits[d]] = String.fromCodePoint(startDigit + d);
+      }
+    }
+    return map;
+  }
+
+  // Mathematical Bold
+  var boldMap = buildContinuous(0x1D400, 0x1D41A, 0x1D7CE);
+
+  // Mathematical Bold Script (kursiv/geschwungen)
+  var scriptMap = buildContinuous(0x1D4D0, 0x1D4EA, null);
+
+  // Mathematical Fraktur (gothic/altdeutsch) with known exceptions
+  var frakturMap = buildContinuous(0x1D504, 0x1D51E, null);
+  var frakturExceptions = {C:'\u212D', H:'\u210C', I:'\u2111', R:'\u211C', Z:'\u2128'};
+  Object.keys(frakturExceptions).forEach(function(k){ frakturMap[k] = frakturExceptions[k]; });
+
+  // Circled (bubble/kreis)
+  var circledMap = {};
+  for (var ci=0; ci<26; ci++){
+    circledMap[upper[ci]] = String.fromCodePoint(0x24B6 + ci);
+    circledMap[lower[ci]] = String.fromCodePoint(0x24D0 + ci);
+  }
+  circledMap['0'] = '\u24EA';
+  for (var cd=1; cd<=9; cd++){ circledMap[String(cd)] = String.fromCodePoint(0x2460 + (cd-1)); }
+
+  // Double-struck (symbol/fantasie)
+  var doubleMap = buildContinuous(0x1D538, 0x1D552, 0x1D7D8);
+  var doubleExceptions = {C:'\u2102', H:'\u210D', N:'\u2115', P:'\u2119', Q:'\u211A', R:'\u211D', Z:'\u2124'};
+  Object.keys(doubleExceptions).forEach(function(k){ doubleMap[k] = doubleExceptions[k]; });
+
+  // Small caps (miniatur)
+  var smallCapsMap = {
+    a:'\u1D00', b:'\u0299', c:'\u1D04', d:'\u1D05', e:'\u1D07', f:'\uA730', g:'\u0262',
+    h:'\u029C', i:'\u026A', j:'\u1D0A', k:'\u1D0B', l:'\u029F', m:'\u1D0D', n:'\u0274',
+    o:'\u1D0F', p:'\u1D18', q:'q', r:'\u0280', s:'s', t:'\u1D1B', u:'\u1D1C', v:'\u1D20',
+    w:'\u1D21', x:'x', y:'\u028F', z:'\u1D22'
+  };
+
+  // Upside-down + mirror (spiegel/überkopf)
+  var upsideMap = {
+    a:'\u0250', b:'q', c:'\u0254', d:'p', e:'\u01DD', f:'\u025F', g:'\u0183',
+    h:'\u0265', i:'\u1D09', j:'\u027E', k:'\u029E', l:'l', m:'\u026F', n:'u',
+    o:'o', p:'d', q:'b', r:'\u0279', s:'s', t:'\u0287', u:'n', v:'\u028C',
+    w:'\u028D', x:'x', y:'\u028E', z:'z',
+    A:'\u2200', B:'\u10412', C:'\u0186', D:'\u15E1', E:'\u018E', F:'\u2132', G:'\u2141',
+    H:'H', I:'I', J:'\u017F', K:'\u029E', L:'\u02E5', M:'W', N:'N', O:'O', P:'\u0500',
+    Q:'\u038C', R:'\u1D1A', S:'S', T:'\u22A5', U:'\u2229', V:'\u1D27', W:'M', X:'X',
+    Y:'\u2144', Z:'Z',
+    '0':'0','1':'\u0196','2':'\u1105','3':'\u0190','4':'\u3123','5':'\u03DB','6':'9','7':'\u3125','8':'8','9':'6',
+    '.':'\u02D9', ',':"'", "'":',', '?':'\u00BF', '!':'\u00A1'
+  };
+
+  function applyMap(text, map){
+    var out = '';
+    for (var i=0;i<text.length;i++){
+      var ch = text[i];
+      out += (map[ch] !== undefined) ? map[ch] : ch;
+    }
+    return out;
+  }
+
+  function upsideDown(text){
+    return applyMap(text, upsideMap).split('').reverse().join('');
+  }
+
+  var zalgoMarks = ['\u0301','\u0300','\u0302','\u0303','\u0306','\u0307','\u0308','\u030A','\u030C','\u0327','\u0329','\u0336','\u0331','\u0332'];
+  function glitch(text){
+    var out = '';
+    for (var i=0;i<text.length;i++){
+      out += text[i];
+      var n = 1 + Math.floor(Math.random()*3);
+      for (var m=0;m<n;m++){
+        out += zalgoMarks[Math.floor(Math.random()*zalgoMarks.length)];
+      }
+    }
+    return out;
+  }
+
+  var styles = [
+    { label: 'Fette Schrift', fn: function(t){ return applyMap(t, boldMap); } },
+    { label: 'Kursive und geschwungene Handschrift', fn: function(t){ return applyMap(t, scriptMap); } },
+    { label: 'Gothic- und altdeutsche Schrift', fn: function(t){ return applyMap(t, frakturMap); } },
+    { label: 'Spiegelschrift und Überkopf-Schrift', fn: upsideDown },
+    { label: 'Bubble- und Kreisschrift', fn: function(t){ return applyMap(t, circledMap); } },
+    { label: 'Miniaturschrift', fn: function(t){ return applyMap(t.toLowerCase(), smallCapsMap); } },
+    { label: 'Glitch- und verrückte Schriftarten', fn: glitch },
+    { label: 'Symbol- und Fantasieschrift', fn: function(t){ return applyMap(t, doubleMap); } }
+  ];
+
+  var input = document.getElementById('textInput');
+  var results = document.getElementById('results');
+
+  function render(){
+    var raw = input.value.trim() === '' ? 'Schriftgenerator' : input.value;
+    results.innerHTML = '';
+    styles.forEach(function(style){
+      var row = document.createElement('div');
+      row.className = 'result-row';
+
+      var main = document.createElement('div');
+      main.className = 'result-main';
+
+      var label = document.createElement('div');
+      label.className = 'result-label';
+      label.textContent = style.label;
+
+      var text = document.createElement('div');
+      text.className = 'result-text';
+      text.textContent = style.fn(raw);
+
+      main.appendChild(label);
+      main.appendChild(text);
+
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.type = 'button';
+      btn.textContent = 'Kopieren';
+      btn.addEventListener('click', function(txt, b){
+        return function(){
+          copyToClipboard(txt);
+          var original = 'Kopieren';
+          b.textContent = 'Kopiert!';
+          b.classList.add('copied');
+          setTimeout(function(){
+            b.textContent = original;
+            b.classList.remove('copied');
+          }, 1400);
+        };
+      }(text.textContent, btn));
+
+      row.appendChild(main);
+      row.appendChild(btn);
+      results.appendChild(row);
+    });
+  }
+
+  function copyToClipboard(str){
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(str).catch(function(){ fallbackCopy(str); });
+    } else {
+      fallbackCopy(str);
+    }
+  }
+  function fallbackCopy(str){
+    var ta = document.createElement('textarea');
+    ta.value = str;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  input.addEventListener('input', render);
+  render();
+})();
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://schriftartgenerator.com/#website",
+      "url": "https://schriftartgenerator.com/",
+      "name": "Schriftgenerator",
+      "description": "Mit unserem Schriftgenerator online kannst du schnell schöne, verrückte und coole Schriftarten erstellen. Das Richtige um Profile & Nicks toll aufzupeppen",
+      "inLanguage": "de"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Schriftgenerator",
+      "url": "https://schriftartgenerator.com/",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "description": "Kostenloser Online-Schriftgenerator zum Erstellen und Kopieren von stylischen Unicode-Schriftarten."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ist der Schriftgenerator kostenlos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, die Nutzung ist vollständig kostenlos, ohne Anmeldung, Zeichenlimit oder versteckte Kosten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funktioniert der Schriftgenerator auch auf dem Smartphone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Sowohl auf iPhone als auch auf Android-Geräten lässt sich Text eingeben, ein Stil antippen und über die Zwischenablage in jede beliebige App einfügen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich damit meine Schrift direkt bei Instagram oder TikTok ändern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Plattformen selbst bieten keine Möglichkeit, die Schriftart direkt in der App zu ändern. Über den Schriftgenerator erstellst du den gewünschten Stil jedoch separat und fügst ihn anschließend einfach in Bio, Beitrag oder Nutzernamen ein."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sind die generierten Schriftarten sicher für Nutzernamen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Da es sich um reguläre Unicode-Zeichen handelt, lassen sie sich problemlos für Nutzernamen, Gaming-Tags oder Profile verwenden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum sehe ich manchmal nur ein Kästchen statt der Schrift?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das bedeutet, dass die jeweilige Website das entsprechende Unicode-Zeichen nicht unterstützt – ein technisches Darstellungsproblem der Plattform, kein Fehler des Generators selbst."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
